@@ -27,5 +27,6 @@ app.use(logger('dev'));
  /**
   * Para teste inicial
   */
- app.get('/', (req,res)=> res.send('oi!'));
+ app.get('/clientes', require('./routes/clientes'));
+
  module.exports = app;
