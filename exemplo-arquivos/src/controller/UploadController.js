@@ -2,7 +2,7 @@ const controller = {
 
     realizarUpload: (req, res) => {
         
-        const {name, size, mimetype } = req.files[arquivo];
+        const {name, size, mimetype } = req.files['arquivo'];
         const resposta = {
             nome: name,
             tamanho: (size / 1024 ) / 1024,
