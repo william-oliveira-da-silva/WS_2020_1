@@ -1,4 +1,6 @@
-const {createModel} = require('mongoose-gridfs');
+const {
+    createModel
+} = require('mongoose-gridfs');
 
 const Arquivo = createModel({
     modelName: 'Arquivo'

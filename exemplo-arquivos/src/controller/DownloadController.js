@@ -16,20 +16,22 @@ const controller = {
                      * Realiza o download
                      */
                     res.attachment(nomeArquivo);
-                    readStream.pipe(res);
+                    readStream.pipe(res); 
                 } else {
                     res.status(404).json({ mensagem: 'Arquivo não encontrado' });
                 }
             }
         });
-    },    
+    },
 
     listarTodosArquivos: (req, res) => {
+
         const Arquivo = require('../models/Arquivo');
         Arquivo
             .find()
             .then(
-                resposta => {
+                resposta => { 
+                    
                     const arquivos = resposta.map(
                         arquivo => {
                             return {
@@ -46,7 +48,7 @@ const controller = {
             )
             .catch(erro => {
                 console.log(erro);
-                res.status(500).json({ mensagem: 'Erro ao listar os arquivos'});
+                res.status(500).json({ mensagem: 'Erro ao listar os arquivos' })
             });
     }
 };
